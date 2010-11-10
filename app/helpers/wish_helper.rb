@@ -1,2 +1,0 @@
-module WishHelper
-end
