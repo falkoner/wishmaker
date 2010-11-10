@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
-	@all_users_list = "" # initialize variable for the view
-	User.find(:all).each { |u| @all_users_list << "<li>#{u.name}</li>" }
+	@users = User.all
 	@current_time = Time.now
   end
 
