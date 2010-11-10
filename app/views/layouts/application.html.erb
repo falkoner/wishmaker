@@ -7,10 +7,11 @@
 		content="text/html; charset=utf-8" />
 	<title>Wishmaker</title>
 	<%= stylesheet_link_tag 'style' %>
+	<%= javascript_include_tag :defaults %> 
+
 </head>
 <body>
 	<div id="content">
-		<h1>Wishmaker</h1>
 		<% unless flash[:notice].blank? %>
 			<div id="notification"><%= flash[:notice] %></div>
 		<% end %>

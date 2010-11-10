@@ -1,2 +1,14 @@
-<h2>Wishlist of <%= @user.name %></h2>
+<h2>Wishlist of <%= @user.name %>:</h2>
+<ul><% @user.wishes.each do |wish| %></ul>
+  <li> <%= wish.idea %>  </li>
+<% end %>
 
+<h2>Add new wish</h2>
+<% form_for([@user, @user.wishes.build]) do |f| %>
+  <%= error_messages_for 'user' %>
+    
+  I wish... <%= f.text_field :idea %>
+
+  <%= f.submit %>
+<% end %>
+  
