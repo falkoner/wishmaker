@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  idea: 'Buy new Nissan Versa 2011'
+
+two:
+  idea: 'Became an astranaut'
