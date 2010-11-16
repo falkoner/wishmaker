@@ -40,9 +40,10 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
 
 #  map.resources :users, :has_many => :wishes
-map.resources :users do |users|
- users.resources :wishes
-end
+  map.resources :users do |users|
+    users.resources :wishes
+  end
+  map.resource :session
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
