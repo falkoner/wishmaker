@@ -1,9 +1,11 @@
 class WishesController < ApplicationController
-
+  
+  before_filter :login_required, :only => :create
+  
   def create
-	@user = User.find(params[:user_id])
-	@wish = @user.wishes.create(params[:wish])
-	redirect_to user_path(@user)
+	
+	@wish = @current_user.wishes.create(params[:wish])
+	redirect_to user_path(@current_user)
   end
   
 end

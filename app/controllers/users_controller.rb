@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_filter :login_required, :only => :show
+
   def index
 	@users = User.all
 	@current_time = Time.now
@@ -20,6 +23,7 @@ class UsersController < ApplicationController
   
   def show
 	@user = User.find(params[:id])
+  redirect_to users_path if @current_user != @user
   end
 	  
 end
