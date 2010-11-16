@@ -15,5 +15,9 @@ class UserTest < ActiveSupport::TestCase
 	       u = User.create(:name => 'Bob Bo', :email => nil)
 		assert u.errors.on(:email)
 	end
-
+	
+	def test_should_have_wishes_association #verify that story "one" owns whishes "one" and "two"
+		assert_equal [ wishes(:one), wishes(:two) ], users(:one).wishes
+	end
+		
 end

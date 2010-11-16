@@ -1,7 +1,11 @@
 <h2>Wishlist of <%= @user.name %>:</h2>
-<ul><% @user.wishes.each do |wish| %></ul>
-  <li> <%= wish.idea %>  </li>
-<% end %>
+<ul id="wishlist">
+ <% if @user.wishes.empty? %>
+	<em> Don't you wish anything? </em>
+ <% else %>
+<%= render :partial => 'wishes/wishlist', :collection => @user.wishes %>
+ <% end %>
+</ul> 
 
 <h2>Add new wish</h2>
 <% form_for([@user, @user.wishes.build]) do |f| %>

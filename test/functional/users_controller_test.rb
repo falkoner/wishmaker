@@ -5,8 +5,8 @@ class UsersControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_template 'index'
-	assert_not_nil assigns(:current_time)
-	assert_not_nil assigns(:all_users_list)
+#assert_not_nil assigns(:current_time)
+#assert_not_nil assigns(:all_users_list)
   end
   
   def test_should_show_new
@@ -35,4 +35,17 @@ class UsersControllerTest < ActionController::TestCase
     post :create, :user => { :name => 'User without e-email' }
     assert assigns(:user).errors.on(:email)
   end
+  
+  def test_should_show_user
+		get :show, :id => users(:one)
+		assert_response :success
+		assert_template 'show'
+		assert_equal users(:one), assigns(:user)
+  end
+  
+  def test_should_show_wishlist
+		get :show, :id => users(:one)
+		assert_select 'ul#wishlist li', :count => 2 # there is list "wishlist" with 2 items on page
+  end
+
 end

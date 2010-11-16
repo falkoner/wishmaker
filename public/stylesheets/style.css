@@ -17,3 +17,13 @@ margin: 10px 0;
 .fieldWithErrors {
 border: 5px solid #f66;
 }
+#wishlist {
+  padding: 5px;
+  margin: 5px;
+  list-style: none;
+  border: 3px solid #ccc;
+  background-color: #eee;
+  float: left;
+  color: #999;
+  font-size: smaller;
+}
