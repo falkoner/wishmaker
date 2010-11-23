@@ -7,9 +7,9 @@ class WishesController < ApplicationController
   end
   
   def create
-	
-	@wish = @current_user.wishes.create(params[:wish])
-	redirect_to user_path(@current_user)
+    flash[:notice] = 'New wish was added'
+    @wish = @current_user.wishes.create(params[:wish])
+    redirect_to user_path(@current_user)
   end
   
 end

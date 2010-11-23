@@ -12,13 +12,14 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:user])
-	if @user.save
+      @user = User.new(params[:user])
+    if @user.save
        flash[:notice] = 'New user was created'
-	   redirect_to users_path
-	else
-    render :action => 'new'
-	end
+       session[:user_id] = @user.id
+       redirect_to user_path(@user)
+    else
+      render :action => 'new'
+    end
   end
   
   def show

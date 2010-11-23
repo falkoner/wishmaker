@@ -4,3 +4,17 @@
 <ul id="wishlist">
     <%= render :partial => 'wishes/wishlist', :collection => @wishes %>
 </ul> 
+
+<% if ! @current_user %>
+    <h2>Log in to add your wish or <%= link_to 'Register', new_user_path %></h2>
+    <% form_tag session_path do %>
+      <p>
+        <label>Username:</label>
+        <%= text_field_tag 'login' %>
+        <label>Password:</label>
+        <%= password_field_tag 'password' %>
+        <%= submit_tag 'submit' %>
+      </p>
+    <% end %>
+<% end %>
+   

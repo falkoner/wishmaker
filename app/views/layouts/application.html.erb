@@ -19,7 +19,8 @@
           <em><%= link_to "(Logout)", session_path, :method => :delete %></em>
         <% else %>
           <em>Not logged in.</em>
-          <%= link_to 'Login', new_session_path %>
+          <%= link_to 'Login', new_session_path %> |
+          <%= link_to 'Register', new_user_path %>
         <% end %>
         </div>
         
