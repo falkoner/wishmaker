@@ -18,14 +18,15 @@ margin: 10px 0;
 border: 5px solid #f66;
 }
 #wishlist {
+
   padding: 5px;
   margin: 5px;
   list-style: none;
   border: 3px solid #ccc;
   background-color: #eee;
-  float: left;
+  text-align:center; 
   color: #999;
-  font-size: smaller;
+  font-size: bigger;
 }
 
 #login_logout {
