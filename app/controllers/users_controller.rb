@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_filter :login_required, :only => :show
 
   def index
-	@users = User.all
-	@current_time = Time.now
+    @users = User.all
+    @current_time = Time.now
   end
 
   def new
-	@user = User.new
+    @user = User.new
   end
   
   def create
@@ -23,8 +23,12 @@ class UsersController < ApplicationController
   end
   
   def show
-	@user = User.find(params[:id])
-  redirect_to users_path if @current_user != @user
+    @user = User.find(params[:id])
+     
+    if @current_user != @user
+      flash[:notice] = "You are not allowed to see other user's wishlist"
+      redirect_to users_path
+    end
   end
-	  
+
 end
