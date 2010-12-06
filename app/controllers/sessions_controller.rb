@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         redirect_to session[:return_to]
         session[:return_to] = nil
       else
-        redirect_to root_path
+        redirect_to user_path(@current_user)
       end
     else
       render :action => 'new'

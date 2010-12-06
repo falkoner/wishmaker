@@ -3,9 +3,9 @@
 one:
   id: 1
   idea: 'Buy new Nissan Versa 2011'
-  user_id: 1
+  user: one
 
 two:
   id: 2
   idea: 'Became an astranaut'
-  user_id: 1
+  user: one

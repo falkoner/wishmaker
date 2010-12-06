@@ -4,8 +4,12 @@ one:
   id: 1
   name: 'Alex'
   email: 'alex@spam.la'
+  login: 'alex'
+  password: 'secret'
 
 two:
   id: 2
   name: 'Lenny'
   email: 'lenny@hotmail.com'
+  login: 'cat123'
+  password: 'password'
